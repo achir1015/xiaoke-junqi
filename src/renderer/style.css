@@ -506,3 +506,6 @@ body.phase-layout .left .actions.play-only button:not(#btnProxy):not(#btnNew) { 
   .movebox { min-height: 90px; }
 }
 .pop { white-space: nowrap; }
+.banner-wrap { min-width: 0; }
+.turn-banner { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+@media (max-width: 1180px) { .banner-wrap .turn-banner { font-size: 17px; letter-spacing: 1px; } }
