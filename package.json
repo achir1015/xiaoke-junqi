@@ -88,7 +88,8 @@
     "dmg": {
       "title": "小柯機器人陸軍棋遊戲 ${version}"
     },
-    "npmRebuild": false
+    "npmRebuild": false,
+    "afterSign": "build/adhoc-sign.cjs"
   },
   "devDependencies": {
     "electron": "^33.4.11",

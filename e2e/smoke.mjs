@@ -1,5 +1,5 @@
 // 單機端對端測試：首頁、布陣、真人對 AI、敵情推算、軍師、提示、悔棋、代打、認輸、棋譜庫、重播、教學、AI 對 AI
-// 用法：node e2e/smoke.mjs [截圖資料夾]
+// 用法：node e2e/smoke.mjs [截圖資料夾]　（測已安裝的程式：XKJ_EXE=<執行檔> node e2e/smoke.mjs）
 import { _electron as electron } from 'playwright-core';
 import { createRequire } from 'module';
 import path from 'path';
@@ -15,7 +15,8 @@ fs.rmSync(path.join(appData, 'xiaoke-junqi-e2eSmoke'), { recursive: true, force:
 let pass = 0, fail = 0;
 const check = (name, ok, extra = '') => { if (ok) { pass++; console.log('✔', name); } else { fail++; console.log('✘', name, extra); } };
 
-const app = await electron.launch({ executablePath: require('electron'), args: ['.', '--profile=e2eSmoke', '--autoplay-policy=no-user-gesture-required'] });
+const exe = process.env.XKJ_EXE;
+const app = await electron.launch({ executablePath: exe || require('electron'), args: [...(exe ? [] : ['.']), '--profile=e2eSmoke', '--autoplay-policy=no-user-gesture-required'] });
 const win = await app.firstWindow();
 const errors = [];
 win.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
