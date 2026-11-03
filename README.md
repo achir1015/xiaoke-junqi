@@ -18,6 +18,7 @@ AI 只根據公開資訊推算對方暗子，並從累積的棋譜學習。
 | MacBook Pro（Apple 晶片） | `XiaokeJunqi-版本-mac-arm64.dmg` |
 | MacBook Pro（Intel） | `XiaokeJunqi-版本-mac-x64.dmg` |
 | Android 手機（直立） | `XiaokeJunqi-版本-android.apk` |
+| iPhone（直放）／iPad（橫放） | 用 Safari 開 [安裝頁](https://achir1015.github.io/xiaoke-junqi/ios/) 按「安裝」（限已登記的裝置） |
 
 程式內建「檢查更新」，有新版時按一下就會自動下載安裝。
 

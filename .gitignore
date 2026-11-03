@@ -11,4 +11,4 @@ android/*.jks
 ios/web/
 ios/*.xcodeproj/
 ios/build/
-ios/XiaokeChess/Info.plist
+ios/XiaokeJunqi/Info.plist

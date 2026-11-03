@@ -1,11 +1,12 @@
 ## 小柯機器人陸軍棋遊戲 v1.0.0
 
-3D 立體陸軍棋（暗棋裁判制／明棋）：Windows 11、MacBook Pro、Android 手機版。
+3D 立體陸軍棋（暗棋裁判制／明棋）：Windows 11、MacBook Pro、Android、iPhone、iPad。
 
 ### 下載
 - **Windows 11**：`XiaokeJunqi-1.0.0-win-x64.exe`（安裝版，會建立桌面捷徑）或 `XiaokeJunqi-1.0.0-win-x64-portable.exe`（免安裝）
 - **MacBook Pro**：Apple 晶片下載 `mac-arm64.dmg`、Intel 晶片下載 `mac-x64.dmg`（第一次開啟請在 App 上按右鍵選「打開」）
 - **Android 手機**：`XiaokeJunqi-1.0.0-android.apk`（直立畫面；用手機下載後點開安裝，需允許「安裝未知應用程式」）
+- **iPhone／iPad**：用 Safari 開 https://achir1015.github.io/xiaoke-junqi/ios/ 按「安裝到這台 iPad／iPhone」（`xiaoke-junqi-ios.ipa`，限開發者登記過的裝置；iPhone 直放、iPad 橫放）
 
 ### 功能
 - 真人對 AI（五種難度）、真人對真人（遠端連線＋文字／語音聊天）、AI 對 AI 觀戰
