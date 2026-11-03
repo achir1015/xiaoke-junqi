@@ -131,7 +131,8 @@ async function init() {
   advisor.setHasKey(S.settings.advisor.hasKey);
 
   bindUI();
-  if (document.documentElement.classList.contains('touch')) setupTouch();
+  if (document.documentElement.classList.contains('mobile')) setupMobile();
+  else if (document.documentElement.classList.contains('touch')) setupTouch();
   renderHome();
   showScreen('home');
   if (!validProfile(S.settings.profile)) ensureProfile();
@@ -299,6 +300,38 @@ function renderHome() {
     h('div', { class: 'credit muted small' }, `v${S.info.version}　${CREDIT}`),
   );
   renderLearnStat();
+}
+
+// ---------------- 手機版（直立）----------------
+// 戰況紀錄、軍師、敵情、對話、音樂收進底部的抽屜；點分頁打開、再點一次收起
+function setupMobile() {
+  document.body.classList.add('is-mobile');
+  const tabs = $('.right .tabs');
+  tabs.prepend(h('button', { class: 'tab', 'data-tab': 'moves' }, '📜 戰況'));
+  const pane = h('div', { id: 'pane-moves', class: 'tabpane' });
+  pane.append($('.movebox'));
+  $('#pane-advisor').before(pane);
+  $$('.tab').forEach((t) => {
+    t.onclick = () => {
+      const open = document.body.classList.contains('sheet-open');
+      const same = t.classList.contains('on');
+      selectTab(t.dataset.tab);
+      document.body.classList.toggle('sheet-open', !(open && same));
+    };
+  });
+  setupTouch();
+  $('.board-tip').textContent = '點棋子選子走棋．兩指旋轉縮放';
+  // 返回鍵：先關對話框、抽屜、音量，再回上一頁
+  window.__xkjBack = () => {
+    const m = $('.modal-back');
+    if (m) { const btns = m.querySelectorAll('.modal-btns button'); (btns[0] || btns[btns.length - 1]).click(); return true; }
+    if (document.body.classList.contains('sheet-open')) { document.body.classList.remove('sheet-open'); return true; }
+    if ($$('.vol.open').length) { $$('.vol.open').forEach((x) => x.classList.remove('open')); return true; }
+    if (S.screen === 'game') { leaveGame(); return true; }
+    if (S.screen === 'guide') { guide && guide.close(); return true; }
+    if (S.screen === 'records') { showScreen('home'); return true; }
+    return false;
+  };
 }
 
 // iPad 等觸控螢幕

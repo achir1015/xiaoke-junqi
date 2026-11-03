@@ -12,7 +12,7 @@ html.mobile input, html.mobile select, html.mobile textarea { font-size: 16px; }
 /* 首頁 */
 html.mobile .home { padding: 12px 12px 24px; }
 html.mobile .home-hero { flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
-html.mobile .hero-piece { width: 54px; height: 54px; font-size: 32px; box-shadow: 0 0 0 3px #b3242c, 0 6px 14px rgba(0,0,0,.5), inset 0 0 0 4px #f3dcae, inset 0 0 0 6px #c8102e; }
+html.mobile .hero-icon { width: 64px; height: 64px; }
 html.mobile .home-hero h1 { font-size: 21px; letter-spacing: 1px; }
 html.mobile .home-hero p { font-size: 13px; }
 html.mobile .my-profile { margin-left: 0; width: 100%; order: 3; }
@@ -51,9 +51,9 @@ html.mobile .vol-pop.right { left: auto; right: 0; }
 
 html.mobile .game-body { display: flex; flex-direction: column; padding-bottom: 52px; min-height: 0; }
 html.mobile .game-body > .left { display: contents; }
-html.mobile #pBlack { order: 1; }
+html.mobile #pTop { order: 1; }
 html.mobile .board-wrap { order: 2; flex: 1; min-height: 260px; }
-html.mobile #pRed { order: 3; }
+html.mobile #pBottom { order: 3; }
 html.mobile .actions { order: 4; display: flex; overflow-x: auto; gap: 6px; padding: 6px 8px; grid-template-columns: none; scrollbar-width: none; }
 html.mobile .actions::-webkit-scrollbar { display: none; }
 html.mobile .actions button { flex: 0 0 auto; padding: 7px 10px; font-size: 14px; }
@@ -140,3 +140,21 @@ html.touch .vol.open .vol-pop { display: flex; }
 html.touch, html.touch body { overscroll-behavior: none; -webkit-tap-highlight-color: transparent; -webkit-user-select: none; user-select: none; }
 html.touch input, html.touch textarea { -webkit-user-select: text; user-select: text; }
 html.touch .vol-mini { white-space: nowrap; font-size: 12px; padding: 4px 6px; }
+
+/* ---------- 陸軍棋手機版 ---------- */
+html.mobile .setupbox { top: 4px; width: calc(100% - 8px); padding: 6px; gap: 4px; }
+html.mobile .setup-tip { display: none; }
+html.mobile .setup-row { gap: 4px; }
+html.mobile .setup-row select { flex: 1 1 100%; font-size: 14px; padding: 5px 8px; }
+html.mobile .setup-row button { flex: 1 1 auto; padding: 6px 6px; font-size: 13px; }
+html.mobile #btnLayoutDone { flex: 1 1 100%; margin-left: 0; font-size: 15px; }
+html.mobile .player.ready { outline-width: 2px; }
+html.mobile .pcap { width: auto; min-width: 17px; padding: 0 2px; }
+html.mobile .intel { padding: 8px; }
+html.mobile .gd-help { order: 1; flex: 1; min-height: 0; }
+html.mobile .gd-para { font-size: 16px; padding: 8px 10px; }
+html.mobile .gd-help-head h3 { font-size: 20px; }
+html.mobile .gd-help-icon { font-size: 32px; }
+html.mobile .pop { font-size: 34px; letter-spacing: 3px; }
+html.mobile .pop.start { font-size: 54px; }
+html.mobile .about-head { flex-wrap: wrap; }
