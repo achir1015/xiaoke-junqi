@@ -27,6 +27,12 @@ fs.copyFileSync(path.join(ROOT, 'assets/icon-256.png'), path.join(OUT, 'assets/i
 fs.copyFileSync(path.join(ROOT, 'node_modules/three/build/three.module.js'), path.join(OUT, 'vendor/three.module.js'));
 fs.copyFileSync(path.join(ROOT, 'node_modules/peerjs/dist/peerjs.min.js'), path.join(OUT, 'vendor/peerjs.min.js'));
 await build({ entryPoints: [path.join(ROOT, 'mobile/anthropic-entry.mjs')], bundle: true, format: 'esm', platform: 'browser', minify: true, outfile: path.join(OUT, 'vendor/anthropic.js'), logLevel: 'warning' });
+// 素材路徑：桌面版的網頁在 src/renderer 底下（要往上兩層）；手機版與線上版的網頁和素材在同一層，
+// 線上版放在 /xiaoke-junqi/online/，往上兩層會跑出網站，所以改成同一層的 assets/
+for (const f of ['js/app.js', 'js/portraits.js']) {
+  const p = path.join(OUT, f);
+  fs.writeFileSync(p, fs.readFileSync(p, 'utf8').replaceAll("'../../assets/", "'assets/"));
+}
 // 4. 版本號
 fs.writeFileSync(path.join(OUT, 'js/version.js'), `window.XKJ_VERSION = ${JSON.stringify(pkg.version)};\n`);
 // 5. index.html：路徑改到 vendor/，重算 importmap 的 CSP 雜湊
@@ -36,6 +42,7 @@ sub('../../node_modules/three/build/three.module.js', './vendor/three.module.js'
 sub('../../node_modules/peerjs/dist/peerjs.min.js', 'vendor/peerjs.min.js');
 sub('<script src="js/xk-mobile.js"></script>', '<script src="js/version.js"></script>\n<script src="js/xk-mobile.js"></script>');
 html = html.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">');
+sub('<title>小柯機器人陸軍棋遊戲</title>', '<title>小柯機器人陸軍棋遊戲</title>\n<link rel="icon" href="assets/icon-256.png">\n<link rel="apple-touch-icon" href="assets/icon-256.png">');
 const im = /<script type="importmap">([\s\S]*?)<\/script>/.exec(html)[1];
 const hash = crypto.createHash('sha256').update(im, 'utf8').digest('base64');
 html = html.replace(/'sha256-[^']*'/, `'sha256-${hash}'`);

@@ -9,6 +9,8 @@ AI 只根據公開資訊推算對方暗子，並從累積的棋譜學習。
 
 ## 下載
 
+**線上版（免安裝）**：https://achir1015.github.io/xiaoke-junqi/online/　．　網站首頁：https://achir1015.github.io/xiaoke-junqi/
+
 到 [Releases](https://github.com/achir1015/xiaoke-junqi/releases/latest) 下載：
 
 | 平台 | 檔案 |
@@ -58,6 +60,8 @@ node e2e/net.mjs     # 雙實例連線測試（本機配對伺服器）
 npm run dist:win     # 建置 Windows 安裝檔
 python android/build.py install   # 建置 Android APK 並安裝到 USB 連接的手機（debug：允許實機測試）
 node e2e/phone.mjs   # 手機實機測試（除錯版 APK）
+node e2e/ios.mjs     # iPhone／iPad 版面測試（Chrome 模擬）
+node e2e/web.mjs     # 線上版測試（照網站路徑排好）
 ```
 
 素材產生：`python scripts/gen_music.py`（背景音樂）、`node scripts/gen_portraits.mjs`（頭像）、`python scripts/make_icon.py`（圖示）。

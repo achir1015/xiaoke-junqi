@@ -1767,7 +1767,7 @@ async function openAbout() {
   const status = h('div', { class: 'upd-status muted' }, '正在檢查是否有新版本…');
   const body = h('div', { class: 'about' },
     h('div', { class: 'about-head' }, h('img', { class: 'about-icon', src: '../../assets/icon-256.png' }),
-      h('div', {}, h('h2', {}, '小柯機器人陸軍棋遊戲'), h('div', { class: 'muted' }, `版本 v${S.info.version}　（${S.info.platform === 'darwin' ? 'macOS' : S.info.platform === 'win32' ? 'Windows' : S.info.platform === 'ios' ? 'iPad／iPhone' : S.info.platform === 'android' ? 'Android' : S.info.platform}）`))),
+      h('div', {}, h('h2', {}, '小柯機器人陸軍棋遊戲'), h('div', { class: 'muted' }, `版本 v${S.info.version}　（${S.info.platform === 'darwin' ? 'macOS' : S.info.platform === 'win32' ? 'Windows' : S.info.platform === 'ios' ? 'iPad／iPhone' : S.info.platform === 'android' ? 'Android' : S.info.platform === 'web' ? '線上版（網頁）' : S.info.platform}）`))),
     h('p', { class: 'credit-line' }, CREDIT),
     h('p', { class: 'muted small' }, '3D 陸軍棋：暗棋裁判制與明棋；真人對 AI、真人對真人（遠端連線＋語音）、AI 對 AI；AI 推算敵情、棋譜累積學習；動畫語音教學；20 首原創背景音樂；70 位頭像與 AI 軍師。'),
     h('p', { class: 'muted small' }, '規則參考：github.com/code-fans/kriegspiel'),
