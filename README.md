@@ -1,4 +1,4 @@
-# 小柯機器人陸軍棋遊戲
+# 小柯機器人陸軍棋遊戲 https://achir1015.github.io/xiaoke-junqi/online/
 
 <img src="build/icon.png" width="160" align="right" alt="小柯機器人陸軍棋遊戲">
 
